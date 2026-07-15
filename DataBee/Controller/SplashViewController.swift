@@ -5,24 +5,9 @@
 
 import UIKit
 
+/// The splash UI lives in Main.storyboard (logo centered on white);
+/// this controller only decides which screen to show next.
 class SplashViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-
-        let logoImageView = UIImageView(image: UIImage(named: "ic_logo"))
-        logoImageView.contentMode = .scaleAspectFit
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(logoImageView)
-
-        NSLayoutConstraint.activate([
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            logoImageView.widthAnchor.constraint(equalToConstant: 225),
-            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 516.0 / 1011.0)
-        ])
-    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

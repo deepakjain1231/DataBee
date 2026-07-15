@@ -53,7 +53,7 @@ class BaseAuthViewController: UIViewController {
         contentView.addSubview(logoImageView)
 
         versionLabel.text = Theme.appVersion
-        versionLabel.font = Theme.medium(15)
+        versionLabel.font = Theme.medium(13)
         versionLabel.textColor = Theme.teal
         versionLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(versionLabel)
@@ -85,10 +85,10 @@ class BaseAuthViewController: UIViewController {
 
             logoImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 16),
             logoImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            logoImageView.widthAnchor.constraint(equalToConstant: 250),
+            logoImageView.widthAnchor.constraint(equalToConstant: 200),
             logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 516.0 / 1011.0),
 
-            versionLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: -4),
+            versionLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: -30),
             versionLabel.trailingAnchor.constraint(equalTo: logoImageView.trailingAnchor),
 
             cardView.topAnchor.constraint(equalTo: versionLabel.bottomAnchor, constant: 40),

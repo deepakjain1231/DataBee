@@ -37,7 +37,7 @@ enum Theme {
 
     static var appVersion: String {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
-        return "Ver \(version)"
+        return "Version \(version)"
     }
 }
 
@@ -83,7 +83,7 @@ enum ThemeFactory {
     static func titleLabel(_ text: String) -> UILabel {
         let label = UILabel()
         label.text = text
-        label.font = Theme.semiBold(26)
+        label.font = Theme.semiBold(20)
         label.textColor = Theme.teal
         label.textAlignment = .center
         return label
@@ -93,10 +93,10 @@ enum ThemeFactory {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = Theme.semiBold(22)
+        button.titleLabel?.font = Theme.semiBold(18)
         button.backgroundColor = color
-        button.layer.cornerRadius = 14
-        button.heightAnchor.constraint(equalToConstant: 58).isActive = true
+        button.layer.cornerRadius = 12
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return button
     }
 
@@ -104,10 +104,10 @@ enum ThemeFactory {
     static func iconTextField(placeholder: String, systemImage: String, isSecure: Bool = false) -> (container: UIView, textField: UITextField) {
         let container = UIView()
         container.backgroundColor = .white
-        container.layer.cornerRadius = 14
+        container.layer.cornerRadius = 12
         container.layer.borderWidth = 1
         container.layer.borderColor = Theme.fieldBorder.cgColor
-        container.heightAnchor.constraint(equalToConstant: 58).isActive = true
+        container.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
         let icon = UIImageView(image: UIImage(systemName: systemImage))
         icon.tintColor = Theme.fieldIcon
