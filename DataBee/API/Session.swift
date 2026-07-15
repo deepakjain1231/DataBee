@@ -34,7 +34,7 @@ final class Session {
     var dbName: String {
         let name = (companyName ?? "").lowercased()
         if name.contains("turner") { return "TurnerAI_DB" }
-        if name.contains("room") { return "RoomConcept_DB" }
+        if name.contains("rconts") { return "RoomConcept_DB" }
         return "AshleyHS-CT"
     }
 

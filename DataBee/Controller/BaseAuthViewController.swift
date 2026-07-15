@@ -86,14 +86,15 @@ class BaseAuthViewController: UIViewController {
             logoImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 16),
             logoImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             logoImageView.widthAnchor.constraint(equalToConstant: 250),
-            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 906.0 / 2152.0),
+            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 516.0 / 1011.0),
 
             versionLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: -4),
             versionLabel.trailingAnchor.constraint(equalTo: logoImageView.trailingAnchor),
 
             cardView.topAnchor.constraint(equalTo: versionLabel.bottomAnchor, constant: 40),
-            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            cardView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            // Fills the width on iPhone, but stays a centered panel on iPad.
+            cardView.widthAnchor.constraint(lessThanOrEqualToConstant: 540),
             cardView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -24),
 
             cardStack.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 44),
@@ -101,6 +102,11 @@ class BaseAuthViewController: UIViewController {
             cardStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 24),
             cardStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -24)
         ])
+
+        // Preferred full-width (minus margins) — gives way to the 540pt cap on iPad.
+        let preferredWidth = cardView.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: -40)
+        preferredWidth.priority = .defaultHigh
+        preferredWidth.isActive = true
     }
 
     func showLoading() {

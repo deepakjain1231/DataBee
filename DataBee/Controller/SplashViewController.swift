@@ -20,7 +20,7 @@ class SplashViewController: UIViewController {
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             logoImageView.widthAnchor.constraint(equalToConstant: 225),
-            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 906.0 / 2152.0)
+            logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 516.0 / 1011.0)
         ])
     }
 
